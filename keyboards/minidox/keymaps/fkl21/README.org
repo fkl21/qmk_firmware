@@ -1,28 +1,53 @@
 #+title: Readme for fkl21's Minidox Configuration
 
 * About
-  This is includes notes about my personal Minidox configuration.
-  To put it in a nutshell, dustypomerleau layout was modified until it was 'right' and
-  this is the current result.
+  This is includes notes about this Minidox configuration.
+  To put it in a nutshell, dustypomerleau layout was modified until it was 'right'
+  for me and this is the current result.
 
 * Changes
-** TODO add changes here.
-
-* Adapt this layout for my needs
+  - swap sym/os and num/sp on thumb-clusters
+  - QWERTY: swap / and ;
+  - vim-style for mouse and arrow keys + home page up and page down
+  - add numblock instead of Dvorak-style number-layer
+  - changed system-layer, navigation-layer, numbers/F-Keys/-layer
+  - additional one-handed thumb-pinky combinations (normal usage requires both hands)
+    - left: tab, esc and caps at leftmost column
+    - right: enter rightmost middle key
+  - available layouts are:
+    - QWERTY
+    - Colemak DHm
+      Matrix "DHm": Colemak Mod-DH (Rev 1) for a non-staggered keyboard.
+      Due to the geometry of this type of keyboard, you may prefer to
+      switch the M and K keys as per the original Mod-DH release.
+      This layout is also known as ‘Colemak-DHm’.
+      [[https://colemakmods.github.io/mod-dh/keyboards.html][Implementation on Keyboard Types]]
+    - [[https://www.neo-layout.org/][Neo2]]  added
+    - Gaming added
+      - basically a right-shifted QWERTY-layout
+      - CTRL, SHIFT, TAB are where they 'normally' are
+      - Second Layer maps some right keys and numbers to left half
+      - Use QWERTY's 'y' of right-side to as sys-layer modifier in gaming mode
+        (to return to another layer e.g. qwerty, neo2, colemak)
 * Tasks:
   NOTE: other tasks are in source code [[file:keymap.c][keymap.c]]
-** CANCELLED swap SYM/OS (middle thumbcluster key) with most inner ones i.e. NAV/BK and NUM/SP
-   CLOSED: [2020-03-23 Mo 14:28]
-** DONE remap ";" to original qerty layout position
-   CLOSED: [2020-03-23 Mo 14:28]
-*** DONE SFT (Shift) needs to be placed onto ";"
-   CLOSED: [2020-03-23 Mo 14:28]
+  - TODO Umlaute are still missing (ae, oe ue, ss)
+  - TODO rewrite all ALT_X, CTRL_X, GUI_X, SFT_X to ALT(x) [...] etc.
+  - TODO add different toggle-able number layers e.g.
+    - 1234567890 home row
+    - even/odd home row (like dustypomerleau's)
+    - different numblock-style
+  - TODO add different toggle-able Symbol-Layer e.g.
+    - NEO2-Syms-like: parentheses!
+  - TODO add different toggle-able Navigation-Layer e.g.
+    - reverse T shaped arrows (maybe like neo2)
 * Notes:
-** Dual-Use-Key Repetition: when pressing key twice and keep pressing down, then key is repeated
-*** this works with all keys e.g. j k l h for vim, space, del, etc.
+** Dual-Use-Key Repetition: when pressing key twice and keep holding down, then key is repeated
+** a,o as Shift keys is not optimal yet (see dustypomerleau's)
 
-* dustypomerleau, Minidox layout (this is the original README)
 
+
+* dustypomerleau's README
   The rationale behind my layout can be summarized as follows:
 
   - Symmetry is important because use-cases are hard to predict. Whenever possible, modifiers and layer keys should be available from either hand.
@@ -37,67 +62,12 @@
   The tapdance code that I used to create mod/tap keys inside my symbol layer allows up to 2 consecutive symbols within `TAPPING_TERM`. If you think you will need to quickly nest more than that, feel free to add more `case`s.
 
 ** Special thanks
-
    - Everyone on the QMK Discord, for helping me work out the code for mod/tap keys using shifted symbols.
    - Everyone on the Colemak Discord, for their initial feedback on the layout.
    - @stevep and @DreymaR, for their work on Colemak DH(m), a truly awesome typing experience (and of course Shai Coleman, for starting it all off!).
    - @ckofy, for offering a dramatic improvement on Dvorak's original number order.
    - u/That-Canadian, for designing this awesome keyboard.
-
 ** Questions or comments?
-
    - GitHub @dustypomerleau
    - Twitter @duspom
    - Discord @dusty#8897
-* OLD
-** Predefined Layouts
-*** Tested ones:
-**** dustypomerleau
-***** interesting bc of dual use of a s d f and j k l ; for shift, control, alt, super
-**** dustypomerleau
-***** Lookes quite like default
-** Features
-*** To Try:
-**** TODO dustypomerleau Shift/Ctrl/Alt/Super on a s d f  and ; l k j
-***** this is kind of nice, but for vim holding j k l h to move is not possible
-**** TODO copy from already existing layout
-*** To Use:
-*** That don't work properly:
-
-** Notes
-*** Key-Layout:
-**** Layer 0
-     from alairock
-     /* Qwerty
-      *
-      * ,----------------------------------.           ,----------------------------------.
-      * |   Q  |   W  |   E  |   R  |   T  |           |   Y  |   U  |   I  |   O  |   P  |
-      * |------+------+------+------+------|           |------+------+------+------+------|
-      * |   A  |   S  |   D  |   F  |   G  |           |   H  |   J  |   K  |   L  |   ;  |
-      * |------+------+------+------+------|           |------+------+------+------+------|
-      * |   Z  |   X  |   C  |   V  |   B  |           |   N  |   M  |   ,  |   .  |   /  |
-      * `----------------------------------'           `----------------------------------'
-      *                  ,--------------------.    ,------,-------------.
-      *                  | Shift/Esc | GUI/Tab|    |      | RAISE| LOWER |
-      *                  `-------------|BSpace|    |Space |------+------.
-      *                                |      |    |      |
-      *                                `------'    `------'
-
-
-** Layout Notes
-* Lost+Found
-** Empty Layer-Template:
-   /*
-   *
-   * ,----------------------------------.           ,----------------------------------.
-   * |      |      |      |      |      |           |      |      |      |      |      |
-   * |------+------+------+------+------|           |------+------+------+------+------|
-   * |      |      |      |      |      |           |      |      |      |      |      |
-   * |------+------+------+------+------|           |------+------+------+------+------|
-   * |      |      |      |      |      |           |      |      |      |      |      |
-   * `----------------------------------'           `----------------------------------'
-   *                  ,--------------------.    ,------,-------------.
-   *                  |           |        |    |      |      |       |
-   *                  `-------------|      |    |      |------+------.
-   *                                |      |    |      |
-   *                                `------'    `------'
